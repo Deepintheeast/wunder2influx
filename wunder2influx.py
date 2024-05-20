@@ -99,3 +99,4 @@ weather_data = fetch_weather_data(url)
 print(weather_data)
 # Wetterdaten in die InfluxDB-Datenbank schreiben
 write_to_influxdb(weather_data, station_id)
+print("Wetterdaten in InfluxDB geschrieben")
