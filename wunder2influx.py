@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+folgreich #!/usr/bin/env python3
 """
 Abholen von Daten einer Wetterstation bei "Wunderground" und 
 Speichern der Daten in einer InfluxDB Datenbank
@@ -102,4 +102,4 @@ weather_data = fetch_weather_data(url)
 print(weather_data)
 # Wetterdaten in die InfluxDB-Datenbank schreiben
 write_to_influxdb(weather_data, station_id)
-print("Wetterdaten in InfluxDB geschrieben")
+print("Wetterdaten erfolgreich in InfluxDB geschrieben")
