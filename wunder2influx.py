@@ -8,21 +8,24 @@ import time
 import requests
 from influxdb import InfluxDBClient
 
-# API-Schlüssel und Stations-ID als Variablen definieren
+# API-Schlüssel und Stations-ID
+# Habt ihr einen eigenen Key dann hier eintragen
 api_key = "e1f10a1e78da46f5b10a1e78da96f525"
-
-# hier die gewünsche Station ID eintragen
-station_id = "XXXXXXXX"
-
-# URL der API
-url = f"https://api.weather.com/v2/pws/observations/current?apiKey={api_key}&stationId={station_id}&format=json&units=m"
+# gewünschte Stations ID eintragen
+station_id = "XXXXXXX"
 
 # Adresse und Port der InfluxDB
+# diese Einstellungen sollten in der Regel so funktionieren
 influx_db_adresse = "127.0.0.1"
 influx_db_port = "8086"
 
 # Name der InfluxDB-Datenbank
+# hier könnt ihr den Namen der Datenbank in die die Werte geschrieben werden sollen festlegen
+# Achtung! Diese Datenbank muss existent sein -> Bitte vorher anlegen !
 influx_db_name = "wunderweather"
+
+# URL der API
+url = f"https://api.weather.com/v2/pws/observations/current?apiKey={api_key}&stationId={station_id}&format=json&units=m"
 
 
 def fetch_weather_data(url):
