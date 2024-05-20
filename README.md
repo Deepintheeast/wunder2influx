@@ -67,7 +67,7 @@ wir öffnen die Crontabelle mit:
 ````
 crontab -e
 ````
-und fügen an das Ende folgende Zeilen an und speichert das ganze:
+und fügen an das Ende folgende Zeilen an und speichern das ganze:
 
 ```
 */3 6-20 * * * cd /home/pi/scripts/wunder2influx && /home/pi/.env/bin/python3 ./wunder2influx.py
