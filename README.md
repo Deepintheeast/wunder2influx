@@ -56,7 +56,7 @@ wunder2influx
 auf der Konsole sollte eine Ausgabe wie diese bringen
 `````
 {'Temperatur': 24, 'Luftfeuchtigkeit': 45, 'Luftdruck': 1018.96, 'Sonnenstrahlung': 916.7, 'UV-Strahlung': 7.2, 'Windgeschwindigkeit': 2, 'Windrichtung': 'WNW', 'Niederschlag mm/h': 0.0, 'Niederschlag 24h': 0.0}
-Wetterdaten in InfluxDB geschrieben
+Wetterdaten erfolgreich in InfluxDB geschrieben
 `````
 
 Klappt das soweit müssen wir das ganze nur noch "automatisieren"!
