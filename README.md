@@ -73,6 +73,16 @@ und fügen an das Ende folgende Zeilen an und speichern das ganze:
 */3 6-20 * * * cd /home/pi/scripts/wunder2influx && /home/pi/.env/bin/python3 ./wunder2influx.py
 */15 0-5,21-23 * * * cd /home/pi/scripts/wunder2influx && /home/pi/.env/bin/python3 ./wunder2influx.py
 ```
+Sollte es hierbei Probleme geben könnt Ihr die beiden Zeilen auch per Konsolenbefehl hinzufügen
+
+```
+echo  -e  "$(crontab -l)\n*/3 6-20 * * * cd /home/pi/scripts/wunder2influx && /home/pi/.env/bin/python3 ./wunder2influx.py" | crontab -
+```
+```
+echo  -e  "$(crontab -l)\n*/15 0-5,21-23 * * * cd /home/pi/scripts/wunder2influx && /home/pi/.env/bin/python3 ./wunder2influx.py" | crontab -
+```
+Einfach jede der beiden Zeilen in die Konsole kopieren und mit "Enter" ausführen!
+
 Habt Ihr das soweit richtig durchgeführt sollten nun die Daten automatisch abgeholt und gespeichert werden.
 
 Zum testen ob auch Daten in der Datenbank ankommen ein paar Minuten warten und dann nachschauen:
