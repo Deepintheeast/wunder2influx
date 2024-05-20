@@ -1,4 +1,4 @@
-folgreich #!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Abholen von Daten einer Wetterstation bei "Wunderground" und 
 Speichern der Daten in einer InfluxDB Datenbank
