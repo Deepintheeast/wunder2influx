@@ -59,8 +59,6 @@ else
     echo "Default Colorschemes bereits aktiert."
 fi
 
-
-echo "Farbschemen für Solaranzeige sind bereits aktiviert."
 echo ""
 echo "Installation abgeschlossen. "
 echo "Mit 'sazlog' kann man sich nun die Logs der 'Solaranzeige' und der 'Automation' in Multitail anzuzeigen."
