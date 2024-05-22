@@ -61,8 +61,9 @@ fi
 
 echo ""
 echo "Installation abgeschlossen. "
+
 echo "Mit 'sazlog' kann man sich nun die Logs der 'Solaranzeige' und der 'Automation' in Multitail anzuzeigen."
-echo "Durch hinzufügen weiterer 'aliase' können auch andere 'Anzeigekonfigurationen' erzeugt werde!"
+echo "Durch hinzufügen weiterer 'aliase' können auch andere 'Anzeigekonfigurationen' erzeugt werden!"
 echo ""
 echo "Have Fun!"
 
