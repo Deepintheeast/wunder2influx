@@ -1,5 +1,7 @@
 #!/bin/bash
 # Installationsscript für "multitail" Erweiterung für die Solaranzeige
+# Installation mit
+# wget https://raw.githubusercontent.com/Deepintheeast/wunder2influx/main/Diverse/install_multitail.sh && bash ./install_multitail.sh
 
 # Username des Benutzers
 username=$(whoami)
