@@ -45,7 +45,7 @@ influx
 > create database wunderweather
 > quit
 ````
-Haben wir das soweit vorgenommen, und den User einmal ab- und wieder angemeldet, können wir einen Test des Scriptes starten
+Haben wir das soweit vorgenommen, reicht zum Test des Scriptes 
 
 ein beherztes: 
 
