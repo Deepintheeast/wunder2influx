@@ -1,6 +1,6 @@
 #!/bin/bash
 # Installationsscript für "multitail" Erweiterung für die Solaranzeige
-# Installation mit
+# Installation mit:
 # wget https://raw.githubusercontent.com/Deepintheeast/wunder2influx/main/Diverse/install_multitail.sh && bash ./install_multitail.sh
 
 # Username des Benutzers
@@ -49,8 +49,9 @@ fi
 echo "Farbschema für 'automation.log' existiert bereits."
 
 
-if ! sudo grep -q "# default colorschemes für solaranzeige" /etc/multitail.conf; then
+if ! sudo grep -q "# colorschemes für solaranzeige" /etc/multitail.conf; then
     sudo bash -c "echo -e '#colorschemes:\n\
+    # colorschemes für solaranzeige"\n\
     # default colorschemes für solaranzeige:\n\
     scheme:automation:/var/www/log/automation.log\n\
     scheme:solaranzeige:/var/www/log/solaranzeige.log' >> /etc/multitail.conf"
