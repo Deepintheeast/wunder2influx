@@ -56,8 +56,6 @@ echo 'Installation des Scripts für den Benutzer: '$username
   fi
 
 echo ''
-echo 'Um den angelegten Alias "wunder2influx" nutzen zu können, muss der Benutzer: '$username' ab- und neu angemeldet werden!'
-echo ''
 echo 'Zur automatischen Ausführung des Scriptes "Cron-Eintrag" festlegen, Beispiel -> siehe Readme Datei!'
 echo ''
 echo 'Installation beendet! Viel Spaß!'
@@ -65,3 +63,4 @@ echo ''
 
 rm -rf /home/$username/temp_wunder2influx/
 rm -f /home/$username/install.sh
+source ~/.bashrc
