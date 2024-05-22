@@ -6,6 +6,8 @@
 # Username des Benutzers
 username=$(whoami)
 
+cd /home/$username
+
 # multitail installieren
 sudo apt-get install multitail
 echo "multitail installiert."
