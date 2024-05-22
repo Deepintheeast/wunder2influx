@@ -23,44 +23,51 @@ echo "Alias 'sazlog' für Multitail existiert bereits."
 # Ein bisschen Farbe gefällig?
 # Farbschema für "solaranzeige.log" und "automation.log" anlegen
 # und an /etc/multitail.conf anhängen
+# Überprüfen und hinzufügen des ersten Blocks
 if ! sudo grep -q "colorscheme:solaranzeige" /etc/multitail.conf; then
-    sudo bash -c "echo -e '#colorschemes:\n\
-    colorscheme:solaranzeige\n\
+    sudo bash -c 'echo -e "colorscheme:solaranzeige\n\
     cs_re:blue:^[0-3][0-9][/.][0-3][0-9][/.] [0-3][0-9]:[0-5][0-9]:[0-5][0-9]\n\
     cs_re_s:magenta:(.*MQT.*)\n\
     cs_re_s:yellow:(.*InfluxDB.*)\n\
-    \n\" >> /etc/multitail.conf"
-    echo "Farbschema für 'solaranzeige.log' wurde angelegt."
+    cs_re_s:red,,bold:(.*Error.*)\n" >> /etc/multitail.conf'
+    echo "colorscheme:solaranzeige wurde hinzugefügt."
+else
+    echo "colorscheme:solaranzeige ist bereits vorhanden."
 fi
-echo "Farbschema für 'solaranzeige.log' existiert bereits."
 
-
+# Überprüfen und hinzufügen des zweiten Blocks
 if ! sudo grep -q "colorscheme:automation" /etc/multitail.conf; then
-    sudo bash -c "echo -e '#colorschemes:\n\  
-    colorscheme:automation\n\
+    sudo bash -c 'echo -e "colorscheme:automation\n\
     cs_re:blue:^[0-3][0-9][/.][0-3][0-9][/.] [0-3][0-9]:[0-5][0-9]:[0-5][0-9]\n\
     cs_re_s:red,,bold:(ERRO.*)\n\
     cs_re_s:blue:.(WARN.*)\n\
     cs_re_s:green:(INFO.*)\n\
-    cs_re_s:magenta:(ENDE.*)\n\
-    \n\" >> /etc/multitail.conf"
-    echo "Farbschema für 'automation.log' wurde angelegt."
+    cs_re_s:magenta:(ENDE.*)\n" >> /etc/multitail.conf'
+    echo "colorscheme:automation wurde hinzugefügt."
+else
+    echo "colorscheme:automation ist bereits vorhanden."
 fi
-echo "Farbschema für 'automation.log' existiert bereits."
 
-
-if ! sudo grep -q "# colorschemes für solaranzeige" /etc/multitail.conf; then
-    sudo bash -c "echo -e '#colorschemes:\n\
-    # colorschemes für solaranzeige"\n\
-    # default colorschemes für solaranzeige:\n\
+# Überprüfen und hinzufügen des dritten Blocks
+if ! sudo grep -q "scheme:automation:/var/www/log/automation.log" /etc/multitail.conf; then
+    sudo bash -c 'echo -e "## colorschemes solaranzeige\n\
+    # default colorschemes:\n\
     scheme:automation:/var/www/log/automation.log\n\
-    scheme:solaranzeige:/var/www/log/solaranzeige.log' >> /etc/multitail.conf"
-    echo "Farbschemen für Solaranzeige wurde aktiviert."
+    scheme:solaranzeige:/var/www/log/solaranzeige.log" >> /etc/multitail.conf'
+    echo "Default Colorschemes wurden aktiert."
+else
+    echo "Default Colorschemes bereits aktiert."
 fi
+
+
 echo "Farbschemen für Solaranzeige sind bereits aktiviert."
 echo ""
-echo "Installation abgeschlossen. Bitte neu einloggen oder 'source ~/.bashrc' ausführen."
-echo "Danach kann 'sazlog' ausgeführt werden, um die Logs der Solaranzeige und der Automation in Multitail anzuzeigen."
+echo "Installation abgeschlossen. "
+echo "Mit 'sazlog' kann man sich nun die Logs der 'Solaranzeige' und der 'Automation' in Multitail anzuzeigen."
+echo "Durch hinzufügen weiterer 'aliase' können auch andere 'Anzeigekonfigurationen' erzeugt werde!"
+echo ""
+echo "Have Fun!"
 
 # Installer beenden und löschen
 rm -f /home/$username/install_multitail.sh
+source ~/.bashrc
