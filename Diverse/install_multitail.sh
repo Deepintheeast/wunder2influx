@@ -68,5 +68,6 @@ echo ""
 echo "Have Fun!"
 
 # Installer beenden und löschen
-rm -f /home/$username/install_multitail.sh
 source ~/.bashrc
+rm -f /home/$username/install_multitail.sh
+
